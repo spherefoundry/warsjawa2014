@@ -47,5 +47,13 @@
     NSLog(@"didDetermineState: %d forRegion: %@", state, region);
 }
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    NSLog(@"didChangeAuthorizationStatus: %d", status);
+    if(status == kCLAuthorizationStatusAuthorized){
+        for(CLRegion * region in _manger.monitoredRegions){
+            [_manger requestStateForRegion:region];
+        }
+    }
+}
 
 @end
