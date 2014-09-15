@@ -15,6 +15,8 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+		NSLog(@"application:didFinishLaunchingWithOptions:");
+	
     _regionMonitoring = [SFRegionMonitoring new];
 
     CLBeaconRegion * ourRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:2079 minor:61897 identifier:@"our-region"];
@@ -25,23 +27,23 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-
+	NSLog(@"applicationWillResignActive:");
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-
+	NSLog(@"applicationDidEnterBackground:");
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-
+	NSLog(@"applicationWillEnterForeground:");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-
+	NSLog(@"applicationDidBecomeActive:");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-
+	NSLog(@"applicationWillTerminate:");
 }
 
 @end

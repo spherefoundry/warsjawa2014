@@ -212,7 +212,7 @@
 					2AE3721019C784860042F4A3 = {
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
