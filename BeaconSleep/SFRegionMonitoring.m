@@ -37,14 +37,26 @@
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"didEnterRegion: %@", region);
+	
+	[_manger startRangingBeaconsInRegion:(CLBeaconRegion*)region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"didExitRegion: %@", region);
+	
+	[_manger stopRangingBeaconsInRegion:(CLBeaconRegion*)region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region {
     NSLog(@"didDetermineState: %d forRegion: %@", state, region);
+	
+	if(state == CLRegionStateInside){
+		[_manger startRangingBeaconsInRegion:(CLBeaconRegion*)region];
+	}
+}
+
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+	NSLog(@"didRangeBeacons: %@ inRegion: %@", beacons, region);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {

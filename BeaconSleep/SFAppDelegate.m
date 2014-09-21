@@ -19,7 +19,9 @@
 	
     _regionMonitoring = [SFRegionMonitoring new];
 
-    CLBeaconRegion * ourRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:2079 minor:61897 identifier:@"our-region"];
+	CLBeaconRegion * ourRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:2079 minor:61897 identifier:@"our-region"];
+	
+//	CLBeaconRegion * ourRegion = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:47412 minor:44016 identifier:@"our-region"];
     
     [_regionMonitoring registerToMonitorForRegion:ourRegion];
 
