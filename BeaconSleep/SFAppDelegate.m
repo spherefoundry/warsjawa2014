@@ -40,6 +40,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 	NSLog(@"applicationDidBecomeActive:");
+	
+	[_regionMonitoring checkPermissions];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -14,4 +14,6 @@
 
 - (void)registerToMonitorForRegion:(CLRegion *)region;
 
+- (void)checkPermissions;
+
 @end

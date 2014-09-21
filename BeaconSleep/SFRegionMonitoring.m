@@ -56,4 +56,24 @@
     }
 }
 
+- (void)checkPermissions {
+	CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+	
+	if(status == kCLAuthorizationStatusRestricted){
+		UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Restrictions"
+															 message:@"This application requires permissions to access location services in order to work. Please contact you device administrator to request permissions."
+															delegate:nil
+												   cancelButtonTitle:@"Got it"
+												   otherButtonTitles:nil];
+		[alertView show];
+	} else if(status == kCLAuthorizationStatusDenied){
+		UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"Restrictions"
+															 message:@"This application requires permissions to access location services in order to work. Please go to settings and enable them."
+															delegate:nil
+												   cancelButtonTitle:@"Got it"
+												   otherButtonTitles:nil];
+		[alertView show];
+	}
+}
+
 @end
